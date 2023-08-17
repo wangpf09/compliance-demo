@@ -1,6 +1,5 @@
-
 #!/bin/bash
-RUN_NAME=
+RUN_NAME=comp-demo
 mkdir -p output/bin
 cp script/* output 2>/dev/null
 chmod +x output/bootstrap.sh

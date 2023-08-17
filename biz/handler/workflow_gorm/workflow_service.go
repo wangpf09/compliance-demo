@@ -39,6 +39,15 @@ func UpdateWorkflowPriority(ctx context.Context, c *app.RequestContext) {
 		})
 		return
 	}
+
+	if len(params.WorkflowIds) > 500 {
+		c.JSON(http.StatusOK, &workflow_gorm.UpdateWorkflowPriorityResponse{
+			Code:    1,
+			Message: "待更新的工作流超出最大限制(500)",
+		})
+		return
+	}
+
 	satisfy, err := checkTimeRange(params.StartTime, params.EndTime)
 	if err != nil {
 		logrus.Errorf("解析时间异常: %v", err)

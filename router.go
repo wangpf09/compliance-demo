@@ -4,6 +4,7 @@ package main
 
 import (
 	"compliance/workflow/biz/handler"
+	"compliance/workflow/biz/handler/log_collect"
 	"github.com/cloudwego/hertz/pkg/app/server"
 )
 
@@ -12,4 +13,6 @@ func customizedRegister(r *server.Hertz) {
 	r.GET("/ping", handler.Ping)
 
 	// your code ...
+	r.GET("/oom", handler.Oom)
+	r.GET("/get/pod/log", log_collect.GetPodLog)
 }

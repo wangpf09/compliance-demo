@@ -12,7 +12,7 @@ var dsn = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Lo
 	"123456",
 	"127.0.0.1",
 	3306,
-	"advc_workflow",
+	"workflow",
 )
 
 var DB *gorm.DB
